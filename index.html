@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Hallo Liebe Kunden</title>
+      <!-- Style-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/loading_style.css">
+    <!-- gsap animation-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+    <script src="https://preview.babylonjs.com/gltf_validator.js"></script>
+    <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+    <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+
+
+  <!-- Javascript tweening engine -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+
+  <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
+    See github.com/8thwall/web/xrextras -->
+  <script src="//cdn.8thwall.com/web/xrextras/xrextras-0.0.14.js"></script>
+
+  <!-- 8thWall Web - Replace the app key here with your own app key -->
+  <script async
+    src="//apps.8thwall.com/xrweb?appKey=yRhawAdD9Mv1weQLkDGw41scFbtZftmlirN6ZpfIr3GUoRMu6rBsiHQA2km5aYvfnrav2y"></script>
+
+</head>
+
+<body>
+
+      <!--LOADING ANIMATION-->
+      <div id="customLoadingScreenDiv">
+        <div class="loading-balls-container">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
+        <div class="loading-text-container">
+            <div class="loading">
+                <div class="loading__letter">L</div>
+                <div class="loading__letter">o</div>
+                <div class="loading__letter">a</div>
+                <div class="loading__letter">d</div>
+                <div class="loading__letter">i</div>
+                <div class="loading__letter">n</div>
+                <div class="loading__letter">g</div>
+                <div class="loading__letter">.</div>
+                <div class="loading__letter">.</div>
+                <div class="loading__letter">.</div>
+            </div>
+        </div>
+        <div class="container progress">
+          <div class="text-progress">0%</div>
+        </div>
+
+    </div>
+    <!--FINISH LOADING ANIMATION-->
+    <img class="logo" src="assets/Recordbay_Logo.png" alt="logo missing">
+
+    <!--UIS-->
+    <div class="UI">
+        <div class= "UI-Holder">
+            <div id="vidElem" class = "boxUI">
+                <i class="material-icons">play_circle_filled</i>
+            </div>
+            <div id="inElem" class = "boxUI">
+                <i class="material-icons">camera_indoor</i>
+            </div>
+            <div id="outElem" class = "boxUI">
+                <i class="material-icons">camera_outdoor</i>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="renderCanvas"></canvas>
+    <button class="btnReveal" type="button" onclick="">tap to place!</button>
+    <script type="text/javascript" src='js/HelperFunctions.js'></script>
+    <script type="text/javascript" src='js/ChangeMaterials.js'></script>
+    <script type="text/javascript" src='js/LoadAssets.js'></script>
+    <script type="text/javascript" src='js/InputContoller.js'></script>
+    <script type="text/javascript" src='js/index.js'></script>
+    <script type="text/javascript"> initializeScript(true)</script>
+</body>
+
+</html>
