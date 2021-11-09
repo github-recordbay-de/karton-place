@@ -43,12 +43,14 @@ async function AddEvents(){
 function playJungleVid(){
     alert("i should play:" +  vid.currentSrc)
     vid.play();
+    music.play()
     // jungleVidAlpha.video.play();
 }
 
 function CloseBox(){
     vid.pause();
     vid.currentTime = 0
+    music.stop()
     // jungleVidAlpha.video.pause();
     // jungleVidAlpha.video.currentTime = 0
 }

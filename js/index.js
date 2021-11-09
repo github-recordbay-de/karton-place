@@ -5,7 +5,7 @@ const endScale = new BABYLON.Vector3(0.05, 0.05, 0.05)    // Ending scale value 
 const animationMillis = 750                               // Animate over 0.75 seconds
 
 
-let surface, engine, scene, camera, assetsManager, isComplex
+let surface, engine, scene, camera, assetsManager, isComplex, music
 
 // Populates some object into an XR scene and sets the initial camera position.
 const initXrScene = ({ scene, camera }) => {
@@ -16,6 +16,11 @@ const initXrScene = ({ scene, camera }) => {
   ground.material = new BABYLON.StandardMaterial("groundMaterial", scene)
   ground.material.alpha = 0
   surface = ground
+
+  music = new BABYLON.Sound("Music", "./assets/katjes_audio.mp3", scene, null, {
+    loop: false,
+    autoplay: false
+  });
 
   assetsManager = new BABYLON.AssetsManager(scene)
   LoadAssets(scene, assetsManager)
@@ -111,15 +116,11 @@ function loadVideo() {
   //alert("Loading video.");
   vid = document.getElementById("tracking-vid");
   vid.load();
-  vid.loop=false;
-  vid.muted=false;
+
   vid.addEventListener("canplaythrough", function() {
       if (!videoLoaded) {
           videoLoaded = true;
           vid.pause();
-
-          //alert("Can play through.");
-          //document.getElementsByClassName("scene-vid")[0].play();
           startScene();
       }
   });
