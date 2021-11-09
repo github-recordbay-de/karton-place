@@ -33,13 +33,14 @@ document.getElementById("outElem").addEventListener("mousedown", (event)=>{
 
 //interaction functions
 function playJungleVid(){
-    jungleVidTex.video.play();
+    alert("i should play:" +  vid.currentSrc)
+    vid.play();
     // jungleVidAlpha.video.play();
 }
 
 function CloseBox(){
-    jungleVidTex.video.pause();
-    jungleVidTex.video.currentTime = 0
+    vid.pause();
+    vid.currentTime = 0
     // jungleVidAlpha.video.pause();
     // jungleVidAlpha.video.currentTime = 0
 }
