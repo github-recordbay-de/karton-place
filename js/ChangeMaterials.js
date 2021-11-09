@@ -25,7 +25,7 @@ function ChangeMaterialProperties() {
         }
         else if(mat.name == "m_video"){
             jungleVidTex = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_05_DE.mp4", scene, true);
-            jungleVidTex.video.muted = true;
+            //jungleVidTex.video.muted = true;
             jungleVidTex.video.pause();
             jungleVidTex.video.loop=false;
             jungleVidTex.video.addEventListener('ended', (event) => {
@@ -36,7 +36,7 @@ function ChangeMaterialProperties() {
             mat.albedoTexture = jungleVidTex;
 
             jungleVidAlpha = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_Alpha_02_DE.mp4", scene, true);
-            jungleVidAlpha.video.muted = true;
+            //jungleVidAlpha.video.muted = true;
             jungleVidAlpha.video.pause();
             jungleVidAlpha.video.loop=false;
             jungleVidAlpha.video.addEventListener('ended', (event) => {
