@@ -27,6 +27,8 @@ async function AddEvents(){
         window.setTimeout(function(){openValleyAnim.restart()}, 100)
         ;
     })
+
+
 }
 
 
@@ -34,14 +36,14 @@ async function AddEvents(){
 function playJungleVid(){
     CloseBox()
     vid.play();
-    //music.play();
+    music.play();
     // jungleVidAlpha.video.play();
 }
 
 function CloseBox(){
     vid.pause();
     vid.currentTime = 0
-    //music.stop()
+    music.stop()
     // jungleVidAlpha.video.pause();
     // jungleVidAlpha.video.currentTime = 0
 }

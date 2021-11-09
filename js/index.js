@@ -6,6 +6,7 @@ const animationMillis = 750                               // Animate over 0.75 s
 
 
 let surface, engine, scene, camera, assetsManager
+var music;
 
 // Populates some object into an XR scene and sets the initial camera position.
 const initXrScene = ({ scene, camera }) => {
@@ -17,10 +18,10 @@ const initXrScene = ({ scene, camera }) => {
   ground.material.alpha = 0
   surface = ground
 
-  // music = new BABYLON.Sound("Music", "./assets/katjes_audio.mp3", scene, null, {
-  //   loop: false,
-  //   autoplay: false
-  // });
+  music = new BABYLON.Sound("Music", "./assets/katjes_audio.mp3", scene, null, {
+    loop: false,
+    autoplay: false
+  });
 
 
   assetsManager = new BABYLON.AssetsManager(scene)

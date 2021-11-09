@@ -1,6 +1,6 @@
 var hdrTexture, Screen
 var moveScene_P
-var music;
+
 let All_AR, Karton_P, Valley_P, Jungle_P;
 
 var scaleFactor = 0.05;
