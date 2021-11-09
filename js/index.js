@@ -111,9 +111,13 @@ function loadVideo() {
   //alert("Loading video.");
   vid = document.getElementById("tracking-vid");
   vid.load();
+  vid.loop=false;
+  vid.muted=false;
   vid.addEventListener("canplaythrough", function() {
       if (!videoLoaded) {
           videoLoaded = true;
+          vid.pause();
+
           //alert("Can play through.");
           //document.getElementsByClassName("scene-vid")[0].play();
           startScene();
