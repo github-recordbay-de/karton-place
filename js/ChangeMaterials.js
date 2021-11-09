@@ -24,7 +24,7 @@ function ChangeMaterialProperties() {
             //mat.emissiveColor = new BABYLON.Color3.FromHexString("#FFFFFF")
         }
         else if(mat.name == "m_video"){
-            jungleVidTex = new BABYLON.VideoTexture("video", vid, scene,false,false);
+            jungleVidTex = new BABYLON.VideoTexture("video", vid, scene,true);
 
             jungleVidTex.video.pause();
             jungleVidTex.video.loop=false;
