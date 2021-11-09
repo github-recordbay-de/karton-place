@@ -34,14 +34,14 @@ document.getElementById("outElem").addEventListener("mousedown", (event)=>{
 //interaction functions
 function playJungleVid(){
     jungleVidTex.video.play();
-    jungleVidAlpha.video.play();
+    // jungleVidAlpha.video.play();
 }
 
 function CloseBox(){
     jungleVidTex.video.pause();
     jungleVidTex.video.currentTime = 0
-    jungleVidAlpha.video.pause();
-    jungleVidAlpha.video.currentTime = 0
+    // jungleVidAlpha.video.pause();
+    // jungleVidAlpha.video.currentTime = 0
 }
 
 let openBoxAnim = gsap.timeline({paused: true})

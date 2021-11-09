@@ -35,16 +35,16 @@ function ChangeMaterialProperties() {
             jungleVidTex.vScale = -1;
             mat.albedoTexture = jungleVidTex;
 
-            jungleVidAlpha = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_Alpha_02_DE.mp4", scene, true);
-            jungleVidAlpha.video.muted = true;
-            jungleVidAlpha.video.pause();
-            jungleVidAlpha.video.loop=false;
-            jungleVidAlpha.video.addEventListener('ended', (event) => {
-                console.log('Video Stopped');
-              });
-            jungleVidAlpha.vScale = -1;
-            jungleVidAlpha.getAlphaFromRGB =true
-            mat.opacityTexture = jungleVidAlpha;
+            // jungleVidAlpha = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_Alpha_02_DE.mp4", scene, true);
+            // jungleVidAlpha.video.muted = true;
+            // jungleVidAlpha.video.pause();
+            // jungleVidAlpha.video.loop=false;
+            // jungleVidAlpha.video.addEventListener('ended', (event) => {
+            //     console.log('Video Stopped');
+            //   });
+            // jungleVidAlpha.vScale = -1;
+            // jungleVidAlpha.getAlphaFromRGB =true
+            // mat.opacityTexture = jungleVidAlpha;
             
             mat.metallic = 1;
             mat.transparencyMode = 2
