@@ -26,8 +26,8 @@ function ChangeMaterialProperties() {
         else if(mat.name == "m_video"){
             jungleVidTex = new BABYLON.VideoTexture("video", vid, scene,true);
 
-            vid.pause();
-            vid.loop=false;
+            jungleVidTex.video.pause();
+            jungleVidTex.video.loop=false;
 
             jungleVidTex.vScale = -1;
             mat.albedoTexture = jungleVidTex;
