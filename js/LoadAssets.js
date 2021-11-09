@@ -64,14 +64,14 @@ function LoadAssets(scene, assetsManager) {
         console.log(message, exception);
     }
 
-    AudioLoaderTask = assetsManager.addBinaryFileTask("", "", "./assets/katjes_audio.wav")
-    AudioLoaderTask.onSuccess = function (task) {
-        music = new BABYLON.Sound("music", task.data, scene, { loop: true, autoplay: true});
-        alert("audio loaded")
-    }
-    AudioLoaderTask.onError = function (task, message, exception) {
-        console.log(message, exception);
-    }
+    // AudioLoaderTask = assetsManager.addBinaryFileTask("", "", "./assets/katjes_audio.wav")
+    // AudioLoaderTask.onSuccess = function (task) {
+    //     music = new BABYLON.Sound("music", task.data, scene, { loop: true, autoplay: true});
+    //     alert("audio loaded")
+    // }
+    // AudioLoaderTask.onError = function (task, message, exception) {
+    //     console.log(message, exception);
+    // }
 
     assetsManager.onFinish = function (task) {
         //ChangeMaterialProperties();

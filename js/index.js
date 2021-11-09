@@ -17,6 +17,11 @@ const initXrScene = ({ scene, camera }) => {
   ground.material.alpha = 0
   surface = ground
 
+  music = new BABYLON.Sound("Music", "./assets/katjes_audio.mp3", scene, null, {
+    loop: false,
+    autoplay: false
+  });
+
 
   assetsManager = new BABYLON.AssetsManager(scene)
   LoadAssets(scene, assetsManager)
