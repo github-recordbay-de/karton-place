@@ -29,6 +29,7 @@ async function ChangeMaterialProperties() {
 
             jungleVidTex.video.pause();
             jungleVidTex.video.loop=false;
+            jungleVidTex.video.muted=false;
 
             //jungleVidTex.vScale = -1;
             mat.albedoTexture = jungleVidTex;
