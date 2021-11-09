@@ -102,9 +102,24 @@ const onxrloaded = () => {
     XRExtras.RuntimeError.pipelineModule(),      // Shows an error image on runtime error.
   ])
 
-  startScene()
+  loadVideo();
 }
 
+let vid;
+var videoLoaded = false;
+function loadVideo() {
+  alert("Loading video.");
+  vid = document.getElementById("tracking-vid");
+  vid.load();
+  vid.addEventListener("canplaythrough", function() {
+      if (!videoLoaded) {
+          videoLoaded = true;
+          alert("Can play through.");
+          //document.getElementsByClassName("scene-vid")[0].play();
+          startScene();
+      }
+  });
+}
 // Show loading screen before the full XR library has been loaded.
 const load = () => { XRExtras.Loading.showLoading({ onxrloaded }) }
 window.onload = () => { window.XRExtras ? load() : window.addEventListener('xrextrasloaded', load) }
