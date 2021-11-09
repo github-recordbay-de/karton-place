@@ -37,7 +37,6 @@ function ChangeMaterialProperties() {
             jungleVidAlpha = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_Alpha_02_DE.mp4", scene, true);
             jungleVidAlpha.video.pause();
             jungleVidAlpha.video.loop=false;
-            jungleVidAlpha.video.playbackRate = 0.8
             jungleVidAlpha.video.addEventListener('ended', (event) => {
                 console.log('Video Stopped');
               });
