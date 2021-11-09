@@ -108,22 +108,22 @@ const onxrloaded = () => {
 let vid;
 var videoLoaded = false;
 function loadVideo() {
-  alert("Loading video.");
+  //alert("Loading video.");
   vid = document.getElementById("tracking-vid");
   vid.load();
   vid.addEventListener("canplaythrough", function() {
       if (!videoLoaded) {
           videoLoaded = true;
-          alert("Can play through.");
+          //alert("Can play through.");
           //document.getElementsByClassName("scene-vid")[0].play();
           startScene();
       }
   });
   vid.addEventListener('ended', (event) => {
-    alert('Video Stopped');
+    //alert('Video Stopped');
   });
 vid.addEventListener('playing', (event) => {
-alert('Video Started');
+//alert('Video Started');
 });
 }
 // Show loading screen before the full XR library has been loaded.
