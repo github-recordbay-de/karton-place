@@ -5,7 +5,7 @@ const endScale = new BABYLON.Vector3(0.05, 0.05, 0.05)    // Ending scale value 
 const animationMillis = 750                               // Animate over 0.75 seconds
 
 
-let surface, engine, scene, camera, assetsManager, isComplex
+let surface, engine, scene, camera, assetsManager
 
 // Populates some object into an XR scene and sets the initial camera position.
 const initXrScene = ({ scene, camera }) => {
@@ -111,7 +111,7 @@ const onxrloaded = () => {
   loadVideo();
 }
 
-let vid;
+var vid;
 var videoLoaded = false;
 function loadVideo() {
   //alert("Loading video.");
@@ -137,6 +137,4 @@ function loadVideo() {
 const load = () => { XRExtras.Loading.showLoading({ onxrloaded }) }
 window.onload = () => { window.XRExtras ? load() : window.addEventListener('xrextrasloaded', load) }
 
-var initializeScript = function(complex) {
-  isComplex = complex;
-};
+ 
