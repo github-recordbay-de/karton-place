@@ -26,9 +26,9 @@ function ChangeMaterialProperties() {
         else if(mat.name == "m_video"){
             jungleVidTex = new BABYLON.VideoTexture("video", vid, scene,true);
 
-            jungleVidTex.video.pause();
-            jungleVidTex.video.loop=false;
-            jungleVidTex.video.addEventListener('ended', (event) => {
+            vid.pause();
+            vid.loop=false;
+            vid.addEventListener('ended', (event) => {
                 console.log('Video Stopped');
               });
 
