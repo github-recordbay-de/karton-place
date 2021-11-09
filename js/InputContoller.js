@@ -1,18 +1,9 @@
 async function VideoSetup(){
-    ChangeMaterialProperties();
+    await ChangeMaterialProperties();
     await AddEvents();
 }
 async function AddEvents(){
-    alert("AddEvents");
-    document.addEventListener('keypress', (e)=>{
-        if(e.code=="KeyO"){
-            //change to video material
-            playJungleVid();
-        }
-        else if(e.code=="KeyU"){
-            CloseBox();
-        }
-    })
+    //alert("AddEvents");
     document.getElementById("vidElem").addEventListener("mousedown", (event)=>{
         //turn off valley and jungle
         Jungle_P.setEnabled(false)
@@ -25,7 +16,7 @@ async function AddEvents(){
         CloseBox();
         Jungle_P.setEnabled(true)
         Valley_P.setEnabled(false)
-        openBoxAnim.restart()
+        openBoxAnim.restart();
     })
 
     document.getElementById("outElem").addEventListener("mousedown", (event)=>{
@@ -41,9 +32,9 @@ async function AddEvents(){
 
 //interaction functions
 function playJungleVid(){
-    alert("i should play:" +  vid.currentSrc)
+    CloseBox()
     vid.play();
-    music.play()
+    music.play();
     // jungleVidAlpha.video.play();
 }
 
