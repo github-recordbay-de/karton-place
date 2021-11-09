@@ -1,36 +1,41 @@
-function AddEvents(){
-document.addEventListener('keypress', (e)=>{
-    if(e.code=="KeyO"){
-        //change to video material
+async function VideoSetup(){
+    ChangeMaterialProperties();
+    await AddEvents();
+}
+async function AddEvents(){
+    alert("AddEvents");
+    document.addEventListener('keypress', (e)=>{
+        if(e.code=="KeyO"){
+            //change to video material
+            playJungleVid();
+        }
+        else if(e.code=="KeyU"){
+            CloseBox();
+        }
+    })
+    document.getElementById("vidElem").addEventListener("mousedown", (event)=>{
+        //turn off valley and jungle
+        Jungle_P.setEnabled(false)
+        Valley_P.setEnabled(false)
+        sideKarton.rotation.x = 90*(Math.PI/180);
         playJungleVid();
-    }
-    else if(e.code=="KeyU"){
+    })
+
+    document.getElementById("inElem").addEventListener("mousedown", (event)=>{
         CloseBox();
-    }
-})
-document.getElementById("vidElem").addEventListener("mousedown", (event)=>{
-    //turn off valley and jungle
-    Jungle_P.setEnabled(false)
-    Valley_P.setEnabled(false)
-    sideKarton.rotation.x = 90*(Math.PI/180);
-    playJungleVid();
-})
+        Jungle_P.setEnabled(true)
+        Valley_P.setEnabled(false)
+        openBoxAnim.restart()
+    })
 
-document.getElementById("inElem").addEventListener("mousedown", (event)=>{
-    CloseBox();
-    Jungle_P.setEnabled(true)
-    Valley_P.setEnabled(false)
-    openBoxAnim.restart()
-})
-
-document.getElementById("outElem").addEventListener("mousedown", (event)=>{
-    CloseBox();
-    Jungle_P.setEnabled(false)
-    Valley_P.setEnabled(true)
-    openBoxAnim.restart()
-    window.setTimeout(function(){openValleyAnim.restart()}, 100)
-    ;
-})
+    document.getElementById("outElem").addEventListener("mousedown", (event)=>{
+        CloseBox();
+        Jungle_P.setEnabled(false)
+        Valley_P.setEnabled(true)
+        openBoxAnim.restart()
+        window.setTimeout(function(){openValleyAnim.restart()}, 100)
+        ;
+    })
 }
 
 

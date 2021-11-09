@@ -65,7 +65,7 @@ function LoadAssets(scene, assetsManager) {
 
 
     assetsManager.onFinish = function (task) {
-        ChangeMaterialProperties();
+        //ChangeMaterialProperties();
         moveScene_P = new BABYLON.TransformNode("moveScene_P", scene)
         //create screen
         // Screen = new BABYLON.MeshBuilder.CreateBox("Screen", { width: 6*scaleFactor, height: 2.5*scaleFactor, depth: 4*scaleFactor }, scene)
@@ -85,7 +85,7 @@ function LoadAssets(scene, assetsManager) {
         Valley_P.setEnabled(false)
 
         CreateAnimations()
-        AddEvents()
+        VideoSetup();
     }
     //Asset Manager check
     assetsManager.onProgress = function (remainingCount, totalCount, lastFinishedTask) {
