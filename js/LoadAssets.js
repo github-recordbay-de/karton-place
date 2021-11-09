@@ -2,7 +2,7 @@ var hdrTexture, Screen
 var moveScene_P
 let All_AR, Karton_P, Valley_P, Jungle_P;
 
-var scaleFactor = 0.1;
+var scaleFactor = 0.05;
 function LoadAssets(scene, assetsManager) {
     //CanyonEnvTask
     CanyonEnvTask = assetsManager.addCubeTextureTask("CanyonEnvTask", "./assets/environment.dds");
