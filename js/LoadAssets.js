@@ -85,7 +85,7 @@ function LoadAssets(scene, assetsManager) {
         Valley_P.setEnabled(false)
 
         CreateAnimations()
-
+        AddEvents()
     }
     //Asset Manager check
     assetsManager.onProgress = function (remainingCount, totalCount, lastFinishedTask) {
