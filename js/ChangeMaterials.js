@@ -25,12 +25,12 @@ async function ChangeMaterialProperties() {
             //mat.emissiveColor = new BABYLON.Color3.FromHexString("#FFFFFF")
         }
         else if(mat.name == "m_video"){
-            jungleVidTex = new BABYLON.VideoTexture("video", vid, scene,false);
+            jungleVidTex = new BABYLON.VideoTexture("video", vid, scene,false,()=>{alert("error in the video")});
 
             jungleVidTex.video.pause();
             jungleVidTex.video.loop=false;
 
-            jungleVidTex.vScale = -1;
+            //jungleVidTex.vScale = -1;
             mat.albedoTexture = jungleVidTex;
 
             // jungleVidAlpha = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_Alpha_02_DE.mp4", scene, true);
