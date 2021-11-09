@@ -28,12 +28,7 @@ function ChangeMaterialProperties() {
 
             vid.pause();
             vid.loop=false;
-            vid.addEventListener('ended', (event) => {
-                alert('Video Stopped');
-              });
-            vid.addEventListener('playing', (event) => {
-            alert('Video Started');
-            });
+
             jungleVidTex.vScale = -1;
             mat.albedoTexture = jungleVidTex;
 

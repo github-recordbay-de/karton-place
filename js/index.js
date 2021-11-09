@@ -119,6 +119,12 @@ function loadVideo() {
           startScene();
       }
   });
+  vid.addEventListener('ended', (event) => {
+    alert('Video Stopped');
+  });
+vid.addEventListener('playing', (event) => {
+alert('Video Started');
+});
 }
 // Show loading screen before the full XR library has been loaded.
 const load = () => { XRExtras.Loading.showLoading({ onxrloaded }) }
