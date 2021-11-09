@@ -25,7 +25,9 @@ function ChangeMaterialProperties() {
         }
         else if(mat.name == "m_video"){
             jungleVidTex = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_05_DE_muted.mp4", scene, true);
+            jungleVidTex.video.preload = true;
             jungleVidTex.video.muted = true;
+
             jungleVidTex.video.pause();
             jungleVidTex.video.loop=false;
             jungleVidTex.video.addEventListener('ended', (event) => {
