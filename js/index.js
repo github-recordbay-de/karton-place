@@ -122,9 +122,9 @@ function loadVideo() {
   vid.addEventListener("canplaythrough", function() {
       if (!videoLoaded) {
           videoLoaded = true;
-          vid.pause();
-          vid.currentTime = 0
-          startScene();
+          // vid.pause();
+          // vid.currentTime = 0
+          //startScene();
       }
   });
   vid.addEventListener('ended', (event) => {
