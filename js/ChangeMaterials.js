@@ -50,12 +50,11 @@ async function ChangeMaterialProperties() {
         }
         else if(mat.name == "mountains"){
             //mat.unlit = true
-            mat.albedoTexture = new BABYLON.Texture("./assets/bergen.jpg", scene)
+            mat.albedoTexture = new BABYLON.Texture("./assets/bergen.jpg", scene, true)
             //mat.albedoColor = new BABYLON.Color3(214/255, 178/255, 142/255)
         }
         else if(mat.name == "river"){
-            mat.unlit = true
-            mat.albedoTexture.is2DArray = false;
+            mat.albedoTexture = new BABYLON.Texture("./assets/river.jpg", scene, true)
         }
     }
 }
