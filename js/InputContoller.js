@@ -1,6 +1,6 @@
 async function VideoSetup(){
     await ChangeMaterialProperties();
-    await AddEvents();
+    //await AddEvents();
 }
 async function AddEvents(){
     //alert("AddEvents");
