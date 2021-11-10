@@ -132,10 +132,11 @@ function loadVideo() {
     }
   });
   vid.addEventListener('ended', (event) => {
-    //alert('Video Stopped');
   });
-  vid.addEventListener('playing', (event) => {
 
+  vid.addEventListener('playing', (event) => {
+    document.getElementById("tracking-vid").loop = false;
+    document.getElementById("alpha-vid").loop = false
   });
 }
 
@@ -147,16 +148,30 @@ function fakePlayVid() {
 
 var firstPlay = false;
 function TruePlayVid() {
+  vidMat.alpha = 1;
+
+  document.getElementById("alpha-vid").pause();
+  document.getElementById("alpha-vid").currentTime = 0
+  document.getElementById("alpha-vid").play();
+
   document.getElementById("tracking-vid").pause();
   document.getElementById("tracking-vid").currentTime = 0
   document.getElementById("tracking-vid").volume = 1;
   document.getElementById("tracking-vid").play();
-  vidMat.alpha = 1;
+
+
   if (!firstPlay) {
     vidMat.albedoTexture = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene, false, {
       autoplay: false,
       loop: false, muted: true
-    }, () => { alert("error in the video") });
+    });
+
+    vidMat.opacityTexture = new BABYLON.VideoTexture("video", document.getElementById('alpha-vid'), scene, false, {
+      autoplay: false,
+      loop: false, muted: true
+    });
+    vidMat.opacityTexture.getAlphaFromRGB =true
+
     firtsPlay = true
   }
 }
