@@ -50,9 +50,11 @@ async function ChangeMaterialProperties() {
         }
         else if(mat.name == "mountains"){
             mat.unlit = true
+            mat.albedoTexture.is2DArray = false;
         }
         else if(mat.name == "river"){
             mat.unlit = true
+            mat.albedoTexture.is2DArray = false;
         }
     }
 }
