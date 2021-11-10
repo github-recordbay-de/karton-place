@@ -39,6 +39,9 @@ i {
     z-index: 2147483647 ;
     top: 100px;
     left: 10px;
+    opacity: 0;
+}
+.reveal{
     opacity: 1;
 }
 

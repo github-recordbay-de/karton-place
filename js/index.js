@@ -58,6 +58,7 @@ const touchListener = (e) => {
   const pickResult = scene.pick(e.touches[0].clientX, e.touches[0].clientY)
   if (pickResult.hit && pickResult.pickedMesh == surface) {
     //startExp();
+
     Karton_P.setEnabled(true)
     moveScene_P.position.x = pickResult.pickedPoint.x
     moveScene_P.position.y = pickResult.pickedPoint.y
@@ -70,6 +71,7 @@ const touchListener = (e) => {
     // moveScene_P.rotate(BABYLON.Axis.Y, -180*(Math.PI/180), BABYLON.Space.LOCAL)
     rot = new BABYLON.Vector3(camera.position.x, 0, camera.position.z)
     moveScene_P.lookAt(rot)
+    document.getElementById("mainUI").classList.add("reveal");
   }
 
 
@@ -166,7 +168,7 @@ function TruePlayVid() {
       autoplay: false,
       loop: false, muted: true
     });
-    
+
     vidMat.albedoTexture = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene, false, {
       autoplay: false,
       loop: false, muted: true
