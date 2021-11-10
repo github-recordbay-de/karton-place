@@ -119,6 +119,7 @@ function loadVideo() {
   //alert("Loading video.");
   vid = document.getElementById("tracking-vid");
   vid.load();
+  document.getElementById("alpha-vid").load()
 
   vid.addEventListener("canplaythrough", function () {
     if (!videoLoaded) {
