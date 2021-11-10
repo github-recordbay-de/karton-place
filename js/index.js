@@ -124,7 +124,7 @@ function loadVideo() {
           videoLoaded = true;
           // vid.pause();
           // vid.currentTime = 0
-          startScene();
+          //startScene();
       }
   });
   vid.addEventListener('ended', (event) => {
