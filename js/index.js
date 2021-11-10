@@ -143,6 +143,14 @@ function loadVideo() {
 function fakePlayVid(){
   document.getElementById("tracking-vid").play();
   document.getElementById("tracking-vid").pause();
+  document.getElementById("tracking-vid").volume = 0;
+}
+
+function TruePlayVid(){
+  document.getElementById("tracking-vid").pause();
+  document.getElementById("tracking-vid").currentTime = 0
+  document.getElementById("tracking-vid").volume = 1;
+  document.getElementById("tracking-vid").play();
 }
 // Show loading screen before the full XR library has been loaded.
 const load = () => { XRExtras.Loading.showLoading({ onxrloaded }) }
