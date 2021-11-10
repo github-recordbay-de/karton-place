@@ -162,15 +162,18 @@ function TruePlayVid() {
 
 
   if (!firstPlay) {
+    vidMat.opacityTexture = new BABYLON.VideoTexture("video", document.getElementById('alpha-vid'), scene, false, {
+      autoplay: false,
+      loop: false, muted: true
+    });
+    
     vidMat.albedoTexture = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene, false, {
       autoplay: false,
       loop: false, muted: true
     });
 
-    vidMat.opacityTexture = new BABYLON.VideoTexture("video", document.getElementById('alpha-vid'), scene, false, {
-      autoplay: false,
-      loop: false, muted: true
-    });
+
+
     vidMat.opacityTexture.getAlphaFromRGB =true
 
     firtsPlay = true

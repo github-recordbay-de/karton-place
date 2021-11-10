@@ -48,5 +48,11 @@ async function ChangeMaterialProperties() {
             mat.transparencyMode = 2
             mat.unlit = true
         }
+        else if(mat.name == "mountains"){
+            mat.unlit = true
+        }
+        else if(mat.name == "river"){
+            mat.unlit = true
+        }
     }
 }
