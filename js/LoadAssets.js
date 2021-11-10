@@ -58,6 +58,7 @@ function LoadAssets(scene, assetsManager) {
     JungleLoaderTask = assetsManager.addMeshTask("", "", "./assets/" + "forest" + ".glb")
     JungleLoaderTask.onSuccess = function (task) {
         task.loadedMeshes[0].parent = Jungle_P
+        Jungle_P.position.y = 0.015;
         Jungle_P.scaling = new BABYLON.Vector3(scaleFactor, scaleFactor, scaleFactor)
     }
     JungleLoaderTask.onError = function (task, message, exception) {

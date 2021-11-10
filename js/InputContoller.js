@@ -1,6 +1,6 @@
 async function VideoSetup(){
     await ChangeMaterialProperties();
-    //await AddEvents();
+    await AddEvents();
 }
 async function AddEvents(){
     //alert("AddEvents");
@@ -9,7 +9,6 @@ async function AddEvents(){
         Jungle_P.setEnabled(false)
         Valley_P.setEnabled(false)
         sideKarton.rotation.x = 90*(Math.PI/180);
-        playJungleVid();
     })
 
     document.getElementById("inElem").addEventListener("mousedown", (event)=>{
@@ -35,17 +34,17 @@ async function AddEvents(){
 //interaction functions
 function playJungleVid(){
     CloseBox()
-    vid.play();
-    // music.play();
-    // jungleVidAlpha.video.play();
 }
 
 function CloseBox(){
-    vid.pause();
-    vid.currentTime = 0
-    // music.stop()
-    // jungleVidAlpha.video.pause();
-    // jungleVidAlpha.video.currentTime = 0
+    vidMat.alpha = 0;
+
+    document.getElementById("alpha-vid").pause();
+    document.getElementById("alpha-vid").currentTime = 0
+  
+    document.getElementById("tracking-vid").pause();
+    document.getElementById("tracking-vid").currentTime = 0
+    document.getElementById("tracking-vid").volume = 0;
 }
 
 let openBoxAnim = gsap.timeline({paused: true})

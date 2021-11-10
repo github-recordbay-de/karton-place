@@ -122,7 +122,7 @@ function loadVideo() {
 
   vid.addEventListener("canplaythrough", function () {
     if (!videoLoaded) {
-      alert('Video Loaded');
+      //alert('Video Loaded');
       videoLoaded = true;
       fakePlayVid();
       startScene();
