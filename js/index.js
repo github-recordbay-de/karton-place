@@ -114,7 +114,7 @@ const onxrloaded = () => {
 
 var vid;
 var videoLoaded = false;
-var firstPlay = false;
+
 function loadVideo() {
   //alert("Loading video.");
   vid = document.getElementById("tracking-vid");
@@ -124,6 +124,8 @@ function loadVideo() {
     if (!videoLoaded) {
       alert('Video Loaded');
       videoLoaded = true;
+      fakePlayVid();
+      startScene();
       // vid.pause();
       // vid.currentTime = 0
 
@@ -146,6 +148,7 @@ function fakePlayVid() {
   document.getElementById("tracking-vid").volume = 0;
 }
 
+var firstPlay = false;
 function TruePlayVid() {
   document.getElementById("tracking-vid").pause();
   document.getElementById("tracking-vid").currentTime = 0
