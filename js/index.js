@@ -132,12 +132,9 @@ function loadVideo() {
     }
   });
   vid.addEventListener('ended', (event) => {
-    alert('Video Stopped');
+    //alert('Video Stopped');
   });
   vid.addEventListener('playing', (event) => {
-    if (!firstPlay) {
-      alert('Video Started');
-    }
 
   });
 }

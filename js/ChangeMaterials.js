@@ -2,7 +2,7 @@ let jungleVidTex, jungleVidAlpha
 var vidMat;
 async function ChangeMaterialProperties() {
 
-    alert("change materials");
+    //alert("change materials");
     var redBay = new BABYLON.Color3.FromHexString("#ea1e1e");
     var blueBay = new BABYLON.Color3.FromHexString("#063c9d");
     var lightGrayBay = new BABYLON.Color3.FromHexString("#eeeeee");
