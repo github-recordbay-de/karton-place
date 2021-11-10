@@ -122,11 +122,10 @@ function loadVideo() {
 
   vid.addEventListener("canplaythrough", function() {
       if (!videoLoaded) {
-          videoLoaded = true;
-          document.getElementById("tracking-vid").play();
-          document.getElementById("tracking-vid").pause();
-          // vid.pause();
-          // vid.currentTime = 0
+        alert('Video Loaded');
+        videoLoaded = true;
+        // vid.pause();
+        // vid.currentTime = 0
 
       }
   });
@@ -136,11 +135,14 @@ function loadVideo() {
   vid.addEventListener('playing', (event) => {
     if(!firstPlay){
       alert('Video Started');
-      startScene();
-      firstPlay = true;
     }
 
   });
+}
+
+function fakePlayVid(){
+  document.getElementById("tracking-vid").play();
+  document.getElementById("tracking-vid").pause();
 }
 // Show loading screen before the full XR library has been loaded.
 const load = () => { XRExtras.Loading.showLoading({ onxrloaded }) }
