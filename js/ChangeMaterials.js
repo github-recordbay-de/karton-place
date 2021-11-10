@@ -1,4 +1,5 @@
 let jungleVidTex, jungleVidAlpha
+var vidMat;
 async function ChangeMaterialProperties() {
 
     alert("change materials");
@@ -25,10 +26,15 @@ async function ChangeMaterialProperties() {
             //mat.emissiveColor = new BABYLON.Color3.FromHexString("#FFFFFF")
         }
         else if(mat.name == "m_video"){
-            jungleVidTex = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene,false,()=>{alert("error in the video")});
-            document.getElementById('tracking-vid').pause();
+            vidMat = mat;
+            mat.albedoTexture = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene,false,        {
+                autoplay: false,
+                loop: false, muted: true
+            }, ()=>{alert("error in the video")});
+            mat.alpha = 0;
+            //document.getElementById('tracking-vid').pause();
             //jungleVidTex.vScale = -1;
-            mat.albedoTexture = jungleVidTex;
+
 
             // jungleVidAlpha = new BABYLON.VideoTexture("video", "assets/211108_Katjes_UV_Alpha_02_DE.mp4", scene, true);
             // jungleVidAlpha.video.muted = true;
