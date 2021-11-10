@@ -27,10 +27,7 @@ async function ChangeMaterialProperties() {
         }
         else if(mat.name == "m_video"){
             vidMat = mat;
-            mat.albedoTexture = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene,false,        {
-                autoplay: false,
-                loop: false, muted: true
-            }, ()=>{alert("error in the video")});
+
             mat.alpha = 0;
             //document.getElementById('tracking-vid').pause();
             //jungleVidTex.vScale = -1;

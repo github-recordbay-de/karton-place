@@ -120,41 +120,47 @@ function loadVideo() {
   vid = document.getElementById("tracking-vid");
   vid.load();
 
-  vid.addEventListener("canplaythrough", function() {
-      if (!videoLoaded) {
-        alert('Video Loaded');
-        videoLoaded = true;
-        // vid.pause();
-        // vid.currentTime = 0
+  vid.addEventListener("canplaythrough", function () {
+    if (!videoLoaded) {
+      alert('Video Loaded');
+      videoLoaded = true;
+      // vid.pause();
+      // vid.currentTime = 0
 
-      }
+    }
   });
   vid.addEventListener('ended', (event) => {
     alert('Video Stopped');
   });
   vid.addEventListener('playing', (event) => {
-    if(!firstPlay){
+    if (!firstPlay) {
       alert('Video Started');
     }
 
   });
 }
 
-function fakePlayVid(){
+function fakePlayVid() {
   document.getElementById("tracking-vid").play();
   document.getElementById("tracking-vid").pause();
   document.getElementById("tracking-vid").volume = 0;
 }
 
-function TruePlayVid(){
+function TruePlayVid() {
   document.getElementById("tracking-vid").pause();
   document.getElementById("tracking-vid").currentTime = 0
   document.getElementById("tracking-vid").volume = 1;
   document.getElementById("tracking-vid").play();
-  vidMat.alpha=1;
+  vidMat.alpha = 1;
+  if (!firstPlay) {
+    vidMat.albedoTexture = new BABYLON.VideoTexture("video", document.getElementById('tracking-vid'), scene, false, {
+      autoplay: false,
+      loop: false, muted: true
+    }, () => { alert("error in the video") });
+    firtsPlay = true
+  }
 }
 // Show loading screen before the full XR library has been loaded.
 const load = () => { XRExtras.Loading.showLoading({ onxrloaded }) }
 window.onload = () => { window.XRExtras ? load() : window.addEventListener('xrextrasloaded', load) }
 
- 
